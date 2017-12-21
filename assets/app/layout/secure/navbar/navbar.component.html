@@ -1,0 +1,161 @@
+
+<mat-toolbar class="nav-menu-top">
+    <mat-toolbar-row>
+        <img class="logo-img" src="http://finreal.com.mx/images/logo.png" alt="Fincredix 2">
+        <span class="example-spacer">
+                Sistema de Gestión de Créditos para Microempresarios
+        </span>
+        <span id="user-login" [@fallIn]="state" > {{ nombreUsuario }}</span>
+        <button (click)="goHome()" mat-icon-button>
+            <mat-icon>home</mat-icon>
+        </button>
+        <button (click)="onLogout()" mat-icon-button>
+            <mat-icon>power_settings_new</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>perm_identity</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar class="nav-menu-list">
+    <mat-toolbar-row>
+        
+        <button mat-button [matMenuTriggerFor]="solicitud">
+            <mat-icon>description</mat-icon>
+            Solicitud
+        </button>
+
+        <button mat-button [matMenuTriggerFor]="caja">
+            <mat-icon>shopping_cart</mat-icon>
+            Caja
+        </button>
+        
+        <button mat-button [matMenuTriggerFor]="credito">
+            <mat-icon>payment</mat-icon>
+            Crédito
+        </button>
+            
+        <button mat-button [matMenuTriggerFor]="animals">
+            <mat-icon>account_balance</mat-icon>
+            Tesorería
+        </button>
+        <button mat-button [matMenuTriggerFor]="cars">
+            <mat-icon>timeline</mat-icon>
+            Riesgo
+        </button>
+
+        <button mat-button>
+            <mat-icon>payment</mat-icon>
+            Cobranza
+        </button>
+
+        <button mat-button>
+            <mat-icon>local_hospital</mat-icon>
+            Seguros
+        </button>
+
+        <button mat-button>
+            <mat-icon>pie_chart</mat-icon>
+            Indicadores
+        </button>
+
+        <button mat-button>
+            <mat-icon>settings</mat-icon>
+            Catálogos
+        </button>
+
+        
+
+        <!-- SOLICITUD -->
+        <mat-menu #solicitud="matMenu">
+            <button mat-menu-item>Simulador de Crédito</button>
+            <button mat-menu-item [routerLink]="['/solicitud/capturar-solicitud']" >Capturar Solicitud</button>
+            <button mat-menu-item [routerLink]="['/solicitud/consultar-solicitudes']">Consulta de Solicitudes</button>
+            <button mat-menu-item>Renovaciones</button>
+            <button mat-menu-item>Exprestatarios</button>
+        </mat-menu>
+
+        <!-- CAJA -->
+        <mat-menu #caja="matMenu">
+                <button mat-menu-item>Registrar Pago</button>
+                <button mat-menu-item>Registrar Corte</button>
+                <button mat-menu-item>Registrar Envío Transportadora</button>
+                <button mat-menu-item>Modificar Fecha de Pago</button>
+                <button mat-menu-item>Consultar Movimientos de Caja</button>
+                <button mat-menu-item>Consultar Envios de Transportadora</button>
+                <button mat-menu-item>Monitoreo de Cajas</button>
+                <button mat-menu-item>Monitoreo de Bóvedas</button>
+            </mat-menu>
+
+            <!-- CREDITO -->
+        <mat-menu #credito="matMenu">
+            <button mat-menu-item>Consulta de Créditos</button>
+            <button mat-menu-item>Actualización de Datos</button>
+            <button mat-menu-item>Consulta de Clientes</button>
+            <button mat-menu-item>Reestructura de Crédito</button>
+            <button mat-menu-item>Recalendarización de Crédito</button>
+            <button mat-menu-item>Consultar Créditos Preaprobados</button>
+            <button mat-menu-item>Recomendados</button>
+            <button mat-menu-item>Diferimientos</button>
+        </mat-menu>
+
+        <mat-menu #animals="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>  
+        </mat-menu>
+
+        <mat-menu #cars="matMenu">
+            <button mat-menu-item>Ferrari</button>
+            <button mat-menu-item>Lamborgini</button>
+        </mat-menu>
+
+        <mat-menu #vertebrates="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+            <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+            <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+            <button mat-menu-item>Birds</button>
+            <button mat-menu-item>Mammals</button>
+        </mat-menu>
+
+        <mat-menu #invertebrates="matMenu">
+            <button mat-menu-item>Insects</button>
+            <button mat-menu-item>Molluscs</button>
+            <button mat-menu-item>Crustaceans</button>
+            <button mat-menu-item>Corals</button>
+            <button mat-menu-item>Arachnids</button>
+            <button mat-menu-item>Velvet worms</button>
+            <button mat-menu-item>Horseshoe crabs</button>
+        </mat-menu>
+
+        <mat-menu #fish="matMenu">
+            <button mat-menu-item>Baikal oilfish</button>
+            <button mat-menu-item>Bala shark</button>
+            <button mat-menu-item>Ballan wrasse</button>
+            <button mat-menu-item>Bamboo shark</button>
+            <button mat-menu-item>Banded killifish</button>
+        </mat-menu>
+
+        <mat-menu #amphibians="matMenu">
+            <button mat-menu-item>Sonoran desert toad</button>
+            <button mat-menu-item>Western toad</button>
+            <button mat-menu-item>Arroyo toad</button>
+            <button mat-menu-item>Yosemite toad</button>
+        </mat-menu>
+
+        <mat-menu #reptiles="matMenu">
+            <button mat-menu-item>Banded Day Gecko</button>
+            <button mat-menu-item>Banded Gila Monster</button>
+            <button mat-menu-item>Black Tree Monitor</button>
+            <button mat-menu-item>Blue Spiny Lizard</button>
+            <button mat-menu-item disabled>Velociraptor</button>
+        </mat-menu>
+
+        
+        
+        <span class="example-spacer"></span>
+
+        </mat-toolbar-row>
+</mat-toolbar>
+
+

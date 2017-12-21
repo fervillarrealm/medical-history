@@ -1,0 +1,46 @@
+.mat-tab-label {
+    background: #1e5799;
+    background: -moz-linear-gradient(left, #1e5799 0%, #207cca 0%, #1580b6 0%, #1f4888 100%);
+    background: -webkit-linear-gradient(left, #1e5799 0%,#207cca 0%,#1580b6 0%,#1f4888 100%);
+    background: linear-gradient(to right, #1e5799 0%,#207cca 0%,#1580b6 0%,#1f4888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1f4888',GradientType=1 );
+    border-top: 2px solid #2590ba;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #24406F;
+    height: 30px !important;
+    min-width: 80px !important;
+}
+
+.mat-tab-body {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    border-radius: 3px;
+    color: rgba(0,0,0,.87);
+    background: #fff;
+    padding: 35px;
+}
+
+.mat-radio-group {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+
+.mat-radio-button {
+    font-size: 10px;
+}
+.mat-radio-container,
+.mat-radio-outer-circle,
+.mat-radio-inner-circle {
+    width: 10px !important;
+    height: 10px !important;
+}

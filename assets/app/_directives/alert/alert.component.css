@@ -1,0 +1,118 @@
+app-alerts {
+    display: block;
+  }
+
+  app-alerts .notify__alert_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(141, 150, 165, 0.71);
+  }
+
+  app-alerts .notify__alert_wrapper {
+    width: 300px;
+    position: fixed;
+    top: 30%;
+    text-align: center;
+    left: calc(50% - 150px);
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1001;    
+    background: white;    
+    border-radius: 2px;
+    opacity: 0;
+    box-shadow: 0 7px 9px -4px rgba(0,0,0,.2), 0 14px 21px 2px rgba(0,0,0,.14), 0 5px 26px 4px rgba(0,0,0,.12);
+    -ms-transform: scale(.9,.85);
+    transform: scale(.9,.85);
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    transition: opacity .4s cubic-bezier(.25,.8,.25,1),transform .4s cubic-bezier(.25,.8,.25,1) .05s;
+    background-color: #fff;
+    color: rgba(0, 0, 0, .87);
+  }
+  app-alerts .notify__alert_wrapper_close {
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  app-alerts .notify__alert_wrapper_close button {
+    width: 100%;
+    background-color: rgba(141, 150, 165, 0.15);
+    font-weight: 700;
+  }
+
+  app-alerts .notify__alert_wrapper_close button:hover {
+    background-color: rgba(141, 150, 165, 0.15) !important;
+  } 
+
+  app-alerts .notify__alert_wrapper_symbol svg {
+    width: 100px;
+    padding: 3rem 0rem;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
+  app-alerts .notify__alert_wrapper_message {
+    padding: 1rem;
+    font-weight: 600;
+    opacity: 0.6;
+    transition: all 450ms ease-in-out 100ms;
+    cursor: default;
+    -moz-user-select: none;
+    user-select: none;
+    margin-bottom: 10px;
+  }
+  app-alerts .notify__alert_wrapper_short {
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0.1rem;
+    color: #444;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 0.35rem;
+    border-bottom-right-radius: 0.35rem;
+    -moz-user-select: none;
+    user-select: none;
+    font-size: 24px;
+    letter-spacing: .005em;
+    line-height: 26px;
+    padding: 20px 20px 0;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 500;
+  }
+  app-alerts .notify__alert_wrapper_short:first-letter {
+    text-transform: uppercase;
+  }
+  app-alerts.success .notify__alert_wrapper_short {
+    background: #6AC259;
+  }
+  app-alerts.success .notify__alert_wrapper_short:hover {
+    background: #5faf50;
+  }
+  app-alerts.error_short {
+    background: #F05228;
+  }
+  angular-notify.error_short:hover {
+    background: #d84a24;
+  }
+  app-alerts.warning_short {
+    background: #E2574C;
+  }
+  app-alerts.warning_short:hover {
+    background: #cb4e44;
+  }
+  app-alerts.info_short {
+    background: #25B7D3;
+  }
+  app-alerts.info_short:hover {
+    background: #21a5be;
+  }
+  

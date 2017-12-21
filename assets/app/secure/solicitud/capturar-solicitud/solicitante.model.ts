@@ -1,0 +1,48 @@
+
+export class Solicitante {
+    constructor(
+        public curp:                    string,
+        public confirmarCurp:           string,
+        public nombreProspecto:         string,
+        public segNombreProspecto:      string,
+        public apellidoPatProspecto:    string,
+        public apellidoMatProspecto:    string,
+        public rfc:                     string,
+        public ife:                     string,
+        public claNacionalidad:         number,
+        public esMasculinoSn:           number,
+        public correoElectronico:       string,
+        public claEstadoCivil:          number,
+        public numDependientes:         number,
+        public telefonoParticular:      string,
+        public telefonoCelular:         string,
+        public claTipoVivienda:         number,
+        public aniosAntiguedadVivienda: number,
+        public mesesAntiguedadVivienda: number,
+        public claLocalidad:            number,
+        public claColonia:              number,
+    ) {}
+}
+
+export interface SolicitanteModel {
+    curp:                    string,
+    confirmarCurp:           string,
+    nombreProspecto:         string,
+    segNombreProspecto:      string,
+    apellidoPatProspecto:    string,
+    apellidoMatProspecto:    string,
+    rfc:                     string,
+    ife:                     string,
+    claNacionalidad:         number,
+    esMasculinoSn:           number,
+    correoElectronico:       string,
+    claEstadoCivil:          number,
+    numDependientes:         number,
+    telefonoParticular:      string,
+    telefonoCelular:         string,
+    claTipoVivienda:         number,
+    aniosAntiguedadVivienda: number,
+    mesesAntiguedadVivienda: number,
+    claLocalidad:            number,
+    claColonia:              number,
+}

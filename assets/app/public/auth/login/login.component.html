@@ -1,0 +1,37 @@
+<mat-card class="form-container">
+    <mat-card-content>
+      <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" class="example-container">
+        <div class="form-group">
+            <p class="text-center">
+                Bienvenido al Sistema de Gestión de Créditos para Microempresarios 
+                    Favor de ingresar su usuario y contraseña.
+            </p>
+        </div>
+        <br/>
+          <mat-form-field>
+            <input matInput placeholder="Usuario" name="username" formControlName="userName">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Ingrese su Contraseña" [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-hint align="end">chance</mat-hint>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+          
+          <div class="form-group text-center" style="margin-bottom: 0;">
+            <p>
+                <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+            </p>
+            <p>
+                <a href="#">Olvidó su Contraseña</a>
+            </p>
+            <p>
+                <a [routerLink]="['/auth/change-password']" routerLinkActive="active">Cambiar Contraseña</a>
+            </p>
+          </div>
+        </form>
+    </mat-card-content>
+  </mat-card>
+

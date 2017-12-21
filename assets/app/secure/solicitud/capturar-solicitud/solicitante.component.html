@@ -1,0 +1,239 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <form novalidate [formGroup]="solicitanteForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <fieldset>
+                            <legend>Datos del Solicitante</legend>            
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <mat-form-field >
+                                            <input [(uppercase)]='curp.value' matInput placeholder="CURP" name="Curp" formControlName="curp">
+                                        </mat-form-field>
+                                        <span class="field-error" *ngIf="!curp.valid && curp.dirty">
+                                            <span *ngIf="curp.hasError('pattern')">el formato debe ser AAAA</span>
+                                        </span>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Confirmar CURP" name="confirmarCurp">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Primer Nombre" name="primerNombre" formControlName="nombreProspecto">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Segundo Nombre" name="segundoNombre">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Apellido Paterno" name="apellidoPaterno">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Apellido Materno" name="apellidoMaterno">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="RFC" name="rfc">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-radio-group>
+                                            <mat-radio-button value="1">IFE</mat-radio-button>
+                                            <mat-radio-button value="2">Pasaporte</mat-radio-button>
+                                        </mat-radio-group>
+                                        <mat-form-field >
+                                            <input matInput placeholder="IFE" name="ife">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Nacionalidad">
+                                                <mat-option *ngFor="let nacionalidad of nacionalidades" [value]="nacionalidad.ClaNacionalidad">
+                                                {{ nacionalidad.NomNacionalidad }}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Correo Electrónico" name="correoElectronico">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Estado Civil">
+                                                <mat-option *ngFor="let estadoCivil of estadosCiviles" [value]="estadoCivil.ClaEstadoCivil">
+                                                {{ estadoCivil.NomEstadoCivil }}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="No. Dependientes" name="noDependientes">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input matInput placeholder="Teléfono Particular" name="telefonoParticular">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field >
+                                            <input [textMask]="{mask: mask}"  matInput placeholder="Teléfono Celular" name="telefonoCelular">
+                                        </mat-form-field>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="País de Nacimiento">
+                                                <mat-option *ngFor="let estadoCivil of estadosCiviles" [value]="estadoCivil.claEstadoCivil">
+                                                {{ estadoCivil.nomEstadoCivil }}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div><!-- col-md-12 -->
+                                </div><!-- row -->
+                        </fieldset><!-- Datos del Solicitante -->
+                    </div><!-- col-md-4  -->
+
+                    <div class="col-md-4">
+                        <fieldset>
+                            <legend>Vivienda</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field>
+                                        <mat-select placeholder="Tipo de Vivienda">
+                                            <mat-option *ngFor="let nacionalidad of nacionalidades" [value]="nacionalidad.claNacionalidad">
+                                            {{ nacionalidad.nomNacionalidad }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field >
+                                                <input matInput placeholder="Años Antiguedad" name="aniosAntiguedad">
+                                            </mat-form-field>
+                                        </div><!-- col-md-6-->
+                                        <div class="col-md-6">
+                                            <mat-form-field >
+                                                <input matInput placeholder="Meses Antiguedad" name="mesesAntiguedad">
+                                            </mat-form-field>
+                                        </div><!-- col-md-6-->
+                                    </div><!-- row -->
+                                </div><!-- col-md-12-->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Calle" name="calle">
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Num. Ext." name="numeroExterior">
+                                    </mat-form-field>
+                                </div><!-- col-md-4 -->
+                                <div class="col-md-4">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Num. Int." name="numeroInterior">
+                                    </mat-form-field>
+                                </div><!-- col-md-4 -->
+                                <div class="col-md-4">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Codigo Postal" name="codigoPostal">
+                                    </mat-form-field>
+                                </div><!-- col-md-4 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Entre Calles" name="entreCalles">
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field>
+                                        <mat-select placeholder="Colonia">
+                                            <mat-option *ngFor="let colonia of colonias" [value]="colonia.ClaColonia">
+                                            {{ colonia.NomColonia }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field>
+                                        <mat-select placeholder="Localidad">
+                                            <mat-option *ngFor="let localidad of localidades" [value]="localidad.ClaLocalidad">
+                                            {{ localidad.NomLocalidad }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Localidad Manual" name="localidadManual">
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Municipio" name="municipio">
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Estado" name="Estado">
+                                    </mat-form-field>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                        </fieldset><!-- Vivienda -->
+                    </div><!-- col-md-4 -->
+                </div><!-- row -->
+                <button>Submit</button>
+            </form><!-- solicitante-form --> 
+            <pre> {{ solicitanteForm.value | json }} </pre>
+        </div><!-- col-md-12 -->
+    </div><!-- row -->
+</div><!-- container-fluid -->
